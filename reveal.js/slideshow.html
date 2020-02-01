@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Slide 1</section>
+				<section>Slide 2</section>
+			</div>
+		</div>
+
+		<!-- Set title and URL for markdown file from query string  -->
+		<!-- e.g. index.html?md=[url or path to markdown file]&title=[window title for slide]&theme=[name of theme] -->
+		<script>
+		let query = location.search;
+		let mdUrl = '';
+		if ( query.length > 1 ) {
+			query = query.substring(1);
+			let parameters = query.split('&');
+			for (var i = 0; i < parameters.length; i++) {
+				let element = parameters[i].split('=');
+				switch (element[0]) {
+					case 'title':
+						document.getElementsByTagName('title')[0].text = element[1];
+						break;
+					case 'md':
+						let slides = document.getElementsByClassName('slides')[0];
+						while (slides.firstChild) {
+							slides.removeChild(slides.firstChild);
+						}
+						section = document.createElement('section');
+						section.setAttribute('data-markdown', element[1]);
+						section.setAttribute('data-separator-vertical', '^\r?\n----\r?\n$');
+						section.setAttribute('data-separator-notes', '^Notes?:');
+						slides.appendChild(section);
+						break;
+					case 'theme':
+						document.getElementById('theme').setAttribute('href','css/theme/' + element[1] + '.css');
+						break;
+				}
+			}
+		}
+		</script>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
