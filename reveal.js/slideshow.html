@@ -56,7 +56,11 @@
 						slides.appendChild(section);
 						break;
 					case 'theme':
-						document.getElementById('theme').setAttribute('href','css/theme/' + element[1] + '.css');
+						if (element[1].startsWith('http')) {
+							document.getElementById('theme').setAttribute('href', element[1]);
+						} else {
+							document.getElementById('theme').setAttribute('href', 'css/theme/' + element[1] + '.css');
+						}
 						break;
 				}
 			}
