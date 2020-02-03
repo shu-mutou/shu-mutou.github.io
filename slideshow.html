@@ -6,19 +6,19 @@
 
 		<title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/css/reset.css">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+		<link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
@@ -59,7 +59,7 @@
 						if (element[1].startsWith('http')) {
 							document.getElementById('theme').setAttribute('href', element[1]);
 						} else {
-							document.getElementById('theme').setAttribute('href', 'css/theme/' + element[1] + '.css');
+							document.getElementById('theme').setAttribute('href', 'reveal.js/css/theme/' + element[1] + '.css');
 						}
 						break;
 				}
@@ -67,7 +67,7 @@
 		}
 		</script>
 
-		<script src="js/reveal.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -76,10 +76,10 @@
 			Reveal.initialize({
 				hash: true,
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'reveal.js/plugin/markdown/marked.js' },
+					{ src: 'reveal.js/plugin/markdown/markdown.js' },
+					{ src: 'reveal.js/plugin/highlight/highlight.js' },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
 				]
 			});
 		</script>
