@@ -1,7 +1,7 @@
 Slides
 ======
 
-* [Sample](sample.md)
+* [Sample](/slides/sample.md)
 
 ----
 

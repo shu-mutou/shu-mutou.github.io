@@ -3,7 +3,7 @@ Sample
 
 Sample slide
 
-![](img/shu-mutow-64.png)
+![](/img/shu-mutow-64.png)
 
 ----
 

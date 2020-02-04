@@ -3,7 +3,7 @@ Shu Muto
 
 Love open source communities.
 
-![](img/shu-mutow-64.png)
+![](/img/shu-mutow-64.png)
 
 ----
 
@@ -15,5 +15,5 @@ Love open source communities.
 Contents
 --------
 
-* [Slides](slides/README.md)
+* [Slides](/slides/README.md)
 
