@@ -5,7 +5,7 @@
  * Copyright (C) 2020 recitativo http://recitativo.info
  */
 @import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700);
 .reveal a {
   line-height: 1.3em;
 }
@@ -19,7 +19,7 @@ body {
 }
 
 .reveal {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-size: 40px;
   font-weight: normal;
   color: #333;
