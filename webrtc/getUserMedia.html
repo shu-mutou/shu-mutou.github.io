@@ -1,0 +1,245 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>getUserMedia test</title>
+<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+// media constraints
+var vRes = [
+    {name: "(none)", width: null, height: null},
+    {name: "QQVGA (120*160)", width: 120, height: 160},
+    {name: "QCIF (144*176)", width: 144, height: 176},
+    {name: "QVGA (240*320)", width: 240, height: 320},
+    {name: "CIF (288*352)", width: 288, height: 352},
+    {name: "VGA (480*640)", width: 480, height: 640},
+    {name: "SVGA (600*800)", width: 600, height: 800},
+    {name: "HDTV 720p (720*1280)", width: 720, height: 1280},
+    {name: "UXGA (1200*1600)", width: 1200, height: 1600},
+    {name: "HDTV 1080p (1080*1920)", width: 1080, height: 1920}
+];
+var confIdx = 9;
+
+var dir = "Vertical";
+var toggleDir = function() {
+    var label = $("#dir").text();
+    if (label == "Vertical") {
+    $("#dir").text("Horizontal");
+    } else {
+    $("#dir").text("Vertical");
+    }
+};
+
+// initialize resolution selection
+var initRes = function(conf, sel) {
+    conf.empty()
+    if (!sel) sel = 0;
+    for(var i = 0; i < vRes.length; i++){
+        var option = $("<option value=" + i + ">" + vRes[i].name + "</option>");
+        if(i == sel){
+            option.attr("selected", "selected");
+        }
+        conf.append(option);
+    }
+};
+
+// test getUserMedia()
+var displayConstraints = {"video": true, "audio": true};
+var localStream;
+var getMedia = function(display){
+    var fpsMin = document.getElementById("fpsMin").value - 0;
+    var fpsIdeal = document.getElementById("fpsMin").value - 0;
+    var fpsMax = document.getElementById("fpsMin").value - 0;
+
+    var resMinIdx = document.getElementById("resMin").selectedIndex;
+    var resIdealIdx = document.getElementById("resIdeal").selectedIndex;
+    var resMaxIdx = document.getElementById("resMax").selectedIndex;
+    var dir = document.getElementById("dir").innerText;
+
+    var camIdx = document.getElementById("vin").selectedIndex;
+    var cams = document.getElementById("vin").options;
+    var micIdx = document.getElementById("ain").selectedIndex;
+    var mics = document.getElementById("ain").options;
+    var constraints = {video:{frameRate: {}, width: {}, height: {}}, audio:{}};
+
+    if (fpsMin > 0){
+        constraints.video.frameRate.min = fpsMin;
+    }
+    if (fpsIdeal > 0){
+        constraints.video.frameRate.ideal = fpsIdeal;
+    }
+    if (fpsMax > 0){
+        constraints.video.frameRate.max = fpsMax;
+    }
+
+    if (resMinIdx > 0){
+        if (dir == "Vertical") {
+            constraints.video.width.min = vRes[resMinIdx].width;
+            constraints.video.height.min = vRes[resMinIdx].height;
+        } else {
+            constraints.video.width.min = vRes[resMinIdx].height;
+            constraints.video.height.min = vRes[resMinIdx].width;
+        }
+    }
+    if (resIdealIdx > 0){
+        if (dir == "Vertical") {
+            constraints.video.width.ideal = vRes[resIdealIdx].width;
+            constraints.video.height.ideal = vRes[resIdealIdx].height;
+        } else {
+            constraints.video.width.ideal = vRes[resIdealIdx].height;
+            constraints.video.height.ideal = vRes[resIdealIdx].width;
+        }
+    }
+    if (resMaxIdx > 0){
+        if (dir == "Vertical") {
+            constraints.video.width.max = vRes[resMaxIdx].width;
+            constraints.video.height.max = vRes[resMaxIdx].height;
+        } else {
+            constraints.video.width.max = vRes[resMaxIdx].height;
+            constraints.video.height.max = vRes[resMaxIdx].width;
+        }
+    }
+
+    if(camIdx>=0){
+        constraints.video.deviceId = cams[camIdx].value;
+    }else{
+        constraints.video = false;
+    }
+
+    if(micIdx>=0){
+        constraints.audio.deviceId = mics[micIdx].value;
+    }else{
+        constraints.audio = false;
+    }
+
+    if(localStream){
+        var tracks = localStream.getTracks();
+        for(i = 0; i < tracks.length; i++){
+            if(typeof kind == "undefined" || tracks[i].kind == kind){
+                tracks[i].stop();
+            }
+        }
+        localStream = null;
+    }
+
+    var gotMedia = function(stream){
+        localStream = stream;
+        // attatch stream
+        var video = $("#userMedia")[0];
+        video.srcObject = stream;
+        video.play();
+    };
+    var failMedia = function(error){
+        $("#logs").append($("<p>failed.</p>"))
+        $("#logs").append($("<p>" + error.message + " " + error.constraintName + "</p>"))
+    };
+    if(display){
+        if(!navigator.mediaDevices.getDisplayMedia && navigator.getDisplayMedia){
+            // for Edge
+            navigator.getDisplayMedia().then(gotMedia, failMedia);
+        }else{
+            navigator.mediaDevices.getDisplayMedia(displayConstraints).then(gotMedia, failMedia);
+        }
+    }else{
+        navigator.mediaDevices.getUserMedia(constraints).then(gotMedia, failMedia);
+    }
+};
+
+//メディアデバイスの取得
+var updateInputs = function(asel, vsel){
+    asel.empty();
+    vsel.empty();
+    navigator.mediaDevices.enumerateDevices().then(function(devlist){
+        for(i = 0; i < devlist.length; i++){
+            var ele = $("<option>");
+            devId = devlist[i].deviceId;
+            var label = devlist[i].label;
+            if(!label) label = "(none)";
+            label = label + " " + devId;
+            ele.val(devId).text(label);
+            if(devlist[i].kind == "audioinput"){
+                asel.append(ele);
+            }else if(devlist[i].kind == "videoinput"){
+                vsel.append(ele);
+            }
+        }
+    });    
+};
+
+$(document).ready(function(){
+    initRes($("#resMin"));
+    initRes($("#resIdeal"));
+    initRes($("#resMax"));
+    updateInputs($("#ain"), $("#vin"));
+});
+</script>
+<style>
+table,td,tr {
+    border: 1px gray solid;
+}
+</style>
+</head>
+<body>
+<table>
+    <tr>
+    <td>Video input</td>
+    <td colspan="3"><select id="vin"></select></td>
+    </tr>
+    <tr>
+    <td>Audio Input</td>
+    <td colspan="3"><select id="ain"></select></td>
+    </tr>
+    <tr>
+    <td>Video Settings</td>
+    <td>Min</td>
+    <td>Ideal</td>
+    <td>Max</td>
+    </tr>
+    <tr>
+    <td>Frame Rate</td>
+    <td>
+        <select id="fpsMin">
+        <option value=0 selected>(none)</option>
+        <option value=8>8</option>
+        <option value=15>15</option>
+        <option value=30>30</option>
+        <option value=60>60</option>
+        </select>
+    </td>
+    <td>
+        <select id="fpsIdeal">
+        <option value=0 selected>(none)</option>
+        <option value=8>8</option>
+        <option value=15>15</option>
+        <option value=30>30</option>
+        <option value=60>60</option>
+        </select>
+    </td>
+    <td>
+        <select id="fpsMax">
+        <option value=0 selected>(none)</option>
+        <option value=8>8</option>
+        <option value=15>15</option>
+        <option value=30>30</option>
+        <option value=60>60</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+    <td><span id="dir">Vertical</span></td>
+    <td><select id="resMin"></select></td>
+    <td><select id="resIdeal"></select></td>
+    <td><select id="resMax"></select></td>
+    </tr>
+    <tr>
+    <td colspan=5><button id="xDir" onclick="toggleDir()">Toggle direction</button></td>
+    </tr>
+</table>
+<button onclick="getMedia()">getUserMedia</button><button onclick="getMedia(true)">getDisplayMedia</button><br>
+<video id="userMedia"></video><br>
+<div id="logs"></div>
+</body>
+</html>
+    
