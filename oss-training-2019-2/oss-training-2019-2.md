@@ -297,15 +297,22 @@ $ git push origin fix-issue1
 ## PR作成１２
 
 表示されたURLにアクセスして、タイトルとコメントを入力し、「Submit new pull request」ボタンをクリックする。
-例）
-```
-Close: #<issueの番号>
-```
-![](/oss-training-2019-2/img/4-03.PNG)
+- Title: 任意のタイトル
+- Leave a comment: PRの内容。
+  例）
+  ```
+  Close: #<issueの番号>
+  ```
 
 ---
 
 ## PR作成１３
+
+![](/oss-training-2019-2/img/4-03.PNG)
+
+---
+
+## PR作成１４
 
 PRがレビューされて、修正要望があったら、PR作成５（リモートブランチの更新の取り込み）からやり直す。
 
