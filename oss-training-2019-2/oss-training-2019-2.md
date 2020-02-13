@@ -296,13 +296,11 @@ $ git push origin fix-issue1
 
 ## PR作成１２
 
-表示されたURLにアクセスして、以下の情報を入力し、「Submit new pull request」ボタンをクリックする。
-- Title: 任意のタイトル
-- Leave a comment: PRの内容。
-    - 例）
-    ```
-    Close: #<issueの番号>
-    ```
+表示されたURLにアクセスして、タイトルとコメントを入力し、「Submit new pull request」ボタンをクリックする。
+例）
+```
+Close: #<issueの番号>
+```
 ![](/oss-training-2019-2/img/4-03.PNG)
 
 ---
