@@ -381,3 +381,5 @@ githubでは2要素認証を設定することが可能です。詳細は下記�
 https://help.github.com/ja/github/authenticating-to-github/configuring-two-factor-authentication
 
 ---
+
+### 終
