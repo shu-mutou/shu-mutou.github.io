@@ -299,7 +299,7 @@ $ git push origin fix-issue1
 表示されたURLにアクセスして、タイトルとコメントを入力し、「Submit new pull request」ボタンをクリックする。
 - Title: 任意のタイトル
 - Leave a comment: PRの内容。
-    例）
+  - 例）
     ```
     Close: #<issueの番号>
     ```
