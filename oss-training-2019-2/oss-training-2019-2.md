@@ -55,42 +55,6 @@ https://github.com/join にアクセスする。
 
 ---
 
-# 公開鍵の登録
-
----
-
-## 公開鍵の登録①
-
-gitコマンドを使える環境で、以下のコマンドを実行してSSH Keyを作成する。
-
-```
-$ ssh-keygen -t rsa -C "<「アカウント作成①」で入力したメールアドレス>"
-```
-
----
-
-## 公開鍵の登録②
-
-https://github.com/settings/keys にアクセスして、「New SSH key」をクリックする。
-![](/oss-training-2019-2/img/1-05.PNG)
-
----
-
-## 公開鍵の登録③
-
-以下の情報を入力し、「Add SSH key」ボタンをクリックする。
-- Title: 任意の公開鍵の名前
-- Key: 「公開鍵の登録①」で作成された `~/.ssh/id_rsa.pub` の内容
-
----
-
-# 公開鍵の登録④
-
-公開鍵が登録されていることを確認する。
-![](/oss-training-2019-2/img/1-06.PNG)
-
----
-
 # リポジトリ作成
 
 ---
@@ -142,6 +106,11 @@ $ git clone https://github.com/<ユーザ名>/<リポジトリ名>.git
 
 ## コード公開③
 
+作業フォルダに移動する。
+```
+cd <リポジトリ名>
+```
+
 `README.md` ファイルを作成する。
 ```
 hello, world!
@@ -153,7 +122,6 @@ hello, world!
 
 作成した `README.md` をコミットする。
 ```
-$ git init
 $ git add README.md
 $ git commit -m "my 1st commit"
 ```
@@ -340,7 +308,46 @@ $ git push origin fix-issue1
 
 ## 付録①
 
-githubの認証をSSH鍵で行いたい場合は、`.ssh/config` ファイルを作成する。
+---
+
+## 公開鍵の登録①
+
+githubの認証をSSH鍵で行いたい場合は以降を実行する。
+
+gitコマンドを使える環境で、以下のコマンドを実行してSSH Keyを作成する。
+
+```
+$ ssh-keygen -t rsa -C "<「アカウント作成①」で入力したメールアドレス>"
+```
+
+---
+
+## 公開鍵の登録②
+
+https://github.com/settings/keys にアクセスして、「New SSH key」をクリックする。
+![](/oss-training-2019-2/img/1-05.PNG)
+
+---
+
+## 公開鍵の登録③
+
+以下の情報を入力し、「Add SSH key」ボタンをクリックする。
+- Title: 任意の公開鍵の名前
+- Key: 「公開鍵の登録①」で作成された `~/.ssh/id_rsa.pub` の内容
+
+---
+
+## 公開鍵の登録④
+
+公開鍵が登録されていることを確認する。
+![](/oss-training-2019-2/img/1-06.PNG)
+
+---
+
+## 公開鍵の設定
+
+`.ssh/config` ファイルに以下を設定する。
+
 ```
 Host github.com
     User git
