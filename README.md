@@ -17,4 +17,4 @@ Contents
 
 * [Slides](/slides/README.md)
 * [getUserMedia](/webrtc/getUserMedia.html)
-* [Githubハンズオン](https://shu-mutou.github.io/slideshow.html?md=/oss-training-2019-2/oss-training-2019-2.md&title=Github Hands-on&theme=https://shu-mutou.github.io/revealjs-custom-jp.css)
+* [Githubハンズオン](https://shu-mutou.github.io/slideshow.html?md=/oss-training-2019-2/oss-training-2019-2.md&title=Github%20Hands-on&theme=https://shu-mutou.github.io/revealjs-custom-jp.css)
