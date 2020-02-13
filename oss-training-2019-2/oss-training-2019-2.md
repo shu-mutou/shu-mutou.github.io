@@ -159,10 +159,10 @@ https://github.com/YuikoTakada/oss-training-20200306/issues にアクセスし�
 - Title: 任意のタイトル。例）test issue 1
 - Leave a comment: issueの内容。
   - 例）
-    ```
+    ````
     - [ ] no `file1.txt`
     - [ ] no `file2.txt`
-    ```
+    ````
   - コメントはmarkdown記法で書くことが可能。「Preview」タブで表示を確認することができる。
 
 ---
