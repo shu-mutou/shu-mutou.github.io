@@ -107,7 +107,7 @@ $ git clone https://github.com/<ユーザ名>/<リポジトリ名>.git
 
 作業フォルダに移動する。
 ```
-cd <リポジトリ名>
+$ cd <リポジトリ名>
 ```
 
 `README.md` ファイルを作成する。
@@ -204,7 +204,7 @@ $ cd oss-training-20200306/
 PR投稿先のリポジトリを「upstream」という名前でリモートリポジトリに登録する。
 ```
 $ git remote add upstream \
-https://github.com/YuikoTakada/oss-training-2019-2.git
+    https://github.com/YuikoTakada/oss-training-2019-2.git
 ```
 「uptream」に直接pushしないように設定する。
 ```
@@ -228,6 +228,7 @@ upstream        no_push (push)
 $ git fetch upstream
 $ git checkout master
 $ git rebase upstream/master
+$ git push -f origin master
 ```
 
 ---
@@ -305,7 +306,13 @@ $ git push origin fix-issue1
 
 ---
 
-## 付録①
+## PR作成⑬
+
+PRがレビューされて、修正要望があったら、PR作成⑤からやり直しする。
+
+---
+
+# 付録①
 
 ---
 
@@ -358,7 +365,7 @@ Host github.com
 
 ---
 
-## 付録②
+# 付録②
 
 githubでは2要素認証を設定することが可能です。詳細は下記をご参照ください。
 
