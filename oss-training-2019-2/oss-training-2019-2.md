@@ -19,7 +19,7 @@
 ## アカウント作成１
 
 https://github.com/join にアクセスする。
-![](/oss-training-2019-2/img/1-01.PNG)
+![](/oss-training-2019-2/img/create-account.png)
 
 ---
 
@@ -35,20 +35,20 @@ https://github.com/join にアクセスする。
 ## アカウント作成３
 
 「Individual」料金プランの「Choose Free」ボタンをクリックする。
-![](/oss-training-2019-2/img/1-02.PNG)
+![](/oss-training-2019-2/img/select-plan.png)
 
 ---
 
 ## アカウント作成４
 
 アンケートに回答して「Complete setup」ボタンをクリックする。
-![](/oss-training-2019-2/img/1-03.PNG)
+![](/oss-training-2019-2/img/complete-setup.png)
 
 ---
 
 ## アカウント作成５
 
-![](/oss-training-2019-2/img/1-04.PNG)
+![](/oss-training-2019-2/img/verify-email.png)
 ↑の画面が表示されるので、「アカウント作成１」で入力したメールアドレス宛に送信されたメールの「Verify email address」をクリックする。
 
 ---
@@ -60,7 +60,7 @@ https://github.com/join にアクセスする。
 ## リポジトリ作成１
 
 画面右上の「＋」→「New Repository」をクリックする。
-![](/oss-training-2019-2/img/2-01.PNG)
+![](/oss-training-2019-2/img/new-repository.png)
 
 ---
 
@@ -150,7 +150,7 @@ issue のテンプレートが設定されている場合がある。
 ## issue作成２
 
 https://github.com/shu-mutou/github-sandbox/issues にアクセスし、「New issue」ボタンをクリックする。
-![](/oss-training-2019-2/img/3-01.PNG)
+![](/oss-training-2019-2/img/new-issue.png)
 
 ---
 
@@ -171,6 +171,12 @@ https://github.com/shu-mutou/github-sandbox/issues にアクセスし、「New i
 
 ---
 
+## issue作成４
+
+![](/oss-training-2019-2/img/submit-issue.png)
+
+---
+
 # PR作成
 
 ---
@@ -185,14 +191,14 @@ PRとはPull Requestの略。バグ修正や機能追加のコードをリポジ
 
 PR投稿先のリポジトリをフォークする。
 https://github.com/shu-mutou/github-sandbox にアクセスし、画面右の「Fork」ボタンをクリックする。
-![](/oss-training-2019-2/img/4-01.PNG)
+![](/oss-training-2019-2/img/fork.png)
 
 ---
 
 ## PR作成３
 
 「Clone or download」ボタンをクリックし、表示されるURLをコピーする（URLの横のボタンをクリックするとコピーできる）
-![](/oss-training-2019-2/img/4-01.PNG)
+![](/oss-training-2019-2/img/clone.png)
 以下のコマンドを実行して、作成したforkをローカルにcloneする。
 ```
 $ git clone [コピーしたリポジトリのURL]
@@ -292,6 +298,8 @@ $ git commit -m "Add [github アカウント] as attendee"
 $ git push origin add-[github アカウント]
 ```
 
+![](/oss-training-2019-2/img/create-pull-request.png)
+
 ---
 
 ## PR作成１２
@@ -308,7 +316,7 @@ $ git push origin add-[github アカウント]
 
 ## PR作成１３
 
-![](/oss-training-2019-2/img/4-03.PNG)
+![](/oss-training-2019-2/img/submit-pull-request.png)
 
 ---
 
@@ -336,7 +344,7 @@ $ ssh-keygen -t rsa -C "<「アカウント作成①」で入力したメール�
 ## 公開鍵の登録２
 
 https://github.com/settings/keys にアクセスして、「New SSH key」をクリックする。
-![](/oss-training-2019-2/img/1-05.PNG)
+![](/oss-training-2019-2/img/keys.png)
 
 ---
 
@@ -351,7 +359,7 @@ https://github.com/settings/keys にアクセスして、「New SSH key」をク
 ## 公開鍵の登録４
 
 公開鍵が登録されていることを確認する。
-![](/oss-training-2019-2/img/1-06.PNG)
+![](/oss-training-2019-2/img/keys-added.png)
 
 ---
 
@@ -379,6 +387,16 @@ Host github.com
 githubでは2要素認証を設定することが可能です。詳細は下記をご参照ください。
 
 https://help.github.com/ja/github/authenticating-to-github/configuring-two-factor-authentication
+
+---
+
+# 付録３
+
+---
+
+## PR のマージ
+
+![](/oss-training-2019-2/img/merge-pull-request.png)
 
 ---
 
