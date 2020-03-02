@@ -243,7 +243,7 @@ _masterブランチに `-f` オプションで強制プッシュしています�
 
 以下のコマンドを実行してブランチを作成する。
 ```
-$ git checkout -b fix-issue1
+$ git checkout -b add-[github アカウント]
 ```
 
 ---
