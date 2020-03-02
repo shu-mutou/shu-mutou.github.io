@@ -402,4 +402,21 @@ https://help.github.com/ja/github/authenticating-to-github/configuring-two-facto
 
 ---
 
+# 付録４
+
+---
+
+## Git for Windows のインストール
+
+[インストーラ](https://gitforwindows.org/)をダウンロードして、起動。
+
+1. インストール先選択
+2. エディタ選択: vim (default), nano, etc.
+3. PATH環境変数選択（２番目：PATHにgitを登録して、3rdパーティから呼べるようにする）
+4. etc. 他デフォルト
+
+_再起動は不要_
+
+---
+
 ### 終
