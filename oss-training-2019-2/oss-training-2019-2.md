@@ -49,7 +49,7 @@ https://github.com/join にアクセスする。
 ## アカウント作成５
 
 ![](/oss-training-2019-2/img/1-04.PNG)
-↑の画面が表示されるので、「アカウント作成①」で入力したメールアドレス宛に送信されたメールの「Verify email address」をクリックする。
+↑の画面が表示されるので、「アカウント作成１」で入力したメールアドレス宛に送信されたメールの「Verify email address」をクリックする。
 
 ---
 
@@ -141,29 +141,33 @@ https://github.com/<ユーザ名>/<リポジトリ名> にアクセスし、 `RE
 
 ## issue作成１
 
-issueとは、バグや追加機能などを管理するためのもの。
-バグ報告や追加機能提案などを行いたい場合は、issueの作成を行う。
+issueとは、バグや追加機能だけでなく、様々な報告/意見/要望を管理するためのもの。
+バグ報告や追加機能提案などを行うときに、issueの作成を行う。
+issue のテンプレートが設定されている場合がある。
 
 ---
 
 ## issue作成２
 
-https://github.com/YuikoTakada/oss-training-20200306/issues にアクセスし、「New issue」ボタンをクリックする。
+https://github.com/shu-mutou/github-sandbox/issues にアクセスし、「New issue」ボタンをクリックする。
 ![](/oss-training-2019-2/img/3-01.PNG)
 
 ---
 
 ## issue作成３
 
+今回は、ハンズオン参加を表明する、という体の issue を登録する。
 以下の情報を入力し、「Submit new issue」ボタンをクリックする。
-- Title: 任意のタイトル。例）test issue 1
+- Title: 任意のタイトル。例）[github アカウント] participates Github training
 - Leave a comment: issueの内容。
   - 例）
     ```
-    - [ ] no `file1.txt`
-    - [ ] no `file2.txt`
+    - [ ] [github アカウント] has willing to participate Github training.
+    - [ ] As a contributor, [github アカウント] communicates with other contributors with respects.
+    - [ ] Create `[github アカウント].md`.
     ```
   - コメントはmarkdown記法で書くことが可能。「Preview」タブで表示を確認することができる。
+- Labels: 右ペインの Labels をクリックして `participate` を選択。
 
 ---
 
@@ -180,7 +184,7 @@ PRとはPull Requestの略。バグ修正や機能追加のコードをリポジ
 ## PR作成２
 
 PR投稿先のリポジトリをフォークする。
-https://github.com/YuikoTakada/oss-training-20200306 にアクセスし、画面右の「Fork」ボタンをクリックする。
+https://github.com/shu-mutou/github-sandbox にアクセスし、画面右の「Fork」ボタンをクリックする。
 ![](/oss-training-2019-2/img/4-01.PNG)
 
 ---
@@ -192,7 +196,7 @@ https://github.com/YuikoTakada/oss-training-20200306 にアクセスし、画面
 以下のコマンドを実行して、作成したforkをローカルにcloneする。
 ```
 $ git clone [コピーしたリポジトリのURL]
-$ cd oss-training-20200306/
+$ cd github-sandbox/
 ```
 
 ---
@@ -202,7 +206,7 @@ $ cd oss-training-20200306/
 PR投稿先のリポジトリを「upstream」という名前でリモートリポジトリに登録する。
 ```
 $ git remote add upstream \
-    https://github.com/YuikoTakada/oss-training-2019-2.git
+    https://github.com/shu-mutou/github-sandbox.git
 ```
 「uptream」に直接pushしないように設定する。
 ```
@@ -211,8 +215,8 @@ $ git remote set-url --push upstream no_push
 確認する。
 ```
 $ git remote -v
-origin  https://github.com/<ユーザ名>/oss-training-20200306.git (fetch)
-origin  https://github.com/<ユーザ名>/oss-training-20200306.git (push)
+origin  https://github.com/<ユーザ名>/github-sandbox.git (fetch)
+origin  https://github.com/<ユーザ名>/github-sandbox.git (push)
 upstream        https://github.com/kubernetes/kubernetes.git (fetch)
 upstream        no_push (push)
 ```
@@ -256,13 +260,9 @@ $ git rebase upstream/master
 
 ## PR作成８
 
-file1.txtを作成する。
+[github アカウント].mdを作成する。
 ```
-file1
-```
-file2.txtを作成する。
-```
-file2
+Hello World!
 ```
 
 ---
@@ -271,7 +271,7 @@ file2
 
 以下のコマンドを実行して、作成したファイルをコミット対象にする。
 ```
-$ git add file1.txt file2.txt
+$ git add [github アカウント].md
 ```
 
 ---
@@ -280,7 +280,7 @@ $ git add file1.txt file2.txt
 
 以下のコマンドを実行して、作成したファイルをリポジトリにローカルリポジトリにコミットする。
 ```
-$ git commit -m "Fix issue #1"
+$ git commit -m "Add [github アカウント] as attendee"
 ```
 
 ---
@@ -289,7 +289,7 @@ $ git commit -m "Fix issue #1"
 
 以下のコマンドを実行して、作成したファイルをリモートリポジトリに送信する。
 ```
-$ git push origin fix-issue1
+$ git push origin add-[github アカウント]
 ```
 
 ---
