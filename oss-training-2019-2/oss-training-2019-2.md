@@ -103,7 +103,7 @@ $ cd <リポジトリ名>
 
 ## コード公開３
 
-以下のコマンドを実行して、clone したリポジトリのユーザ設定を行う。
+以下のコマンドを実行して、clone したリポジトリにユーザ設定を行う。
 ```
 $ git config user.name <ユーザ名>
 $ git config user.email <メールアドレス>
@@ -210,6 +210,11 @@ https://github.com/shu-mutou/github-sandbox にアクセスし、画面右の「
 ```
 $ git clone [コピーしたリポジトリのURL]
 $ cd github-sandbox/
+```
+以下のコマンドを実行して、clone したリポジトリにユーザ設定を行う。
+```
+$ git config user.name <ユーザ名>
+$ git config user.email <メールアドレス>
 ```
 
 ---
