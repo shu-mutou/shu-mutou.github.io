@@ -273,6 +273,11 @@ $ git rebase upstream/master
 
 ## PR作成９
 
+今回は`workdir`という作業ディレクトリにファイルを追加します。
+```
+cd workdir
+nano [github アカウント]
+```
 [github アカウント].mdを作成する。
 ```
 Hello World!
