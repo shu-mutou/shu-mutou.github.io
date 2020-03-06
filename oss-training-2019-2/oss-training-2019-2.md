@@ -94,19 +94,19 @@ $ git config --global https.proxy http://proxy.example.com:8080
 ```
 $ git clone https://github.com/<ユーザ名>/<リポジトリ名>.git
 ```
-以下のコマンドを実行して、clone したリポジトリのユーザ設定を行う。
+作業フォルダに移動する。
 ```
-$ git config user.name <ユーザ名>
-$ git config user.email <メールアドレス>
+$ cd <リポジトリ名>
 ```
 
 ---
 
 ## コード公開３
 
-作業フォルダに移動する。
+以下のコマンドを実行して、clone したリポジトリのユーザ設定を行う。
 ```
-$ cd <リポジトリ名>
+$ git config user.name <ユーザ名>
+$ git config user.email <メールアドレス>
 ```
 `README.md` ファイルを作成する。
 ```
