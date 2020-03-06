@@ -80,15 +80,10 @@ https://github.com/join にアクセスする。
 
 ## コード公開１
 
-以下のコマンドを実行して、ユーザ設定を行う。
-```
-$ git config user.name <ユーザ名>
-$ git config user.email <メールアドレス>
-```
 以下のコマンドを実行して、プロキシ設定を行う。
 ```
-$ git config http.proxy http://proxy.example.com:8080
-$ git config https.proxy http://proxy.example.com:8080
+$ git config --global http.proxy http://proxy.example.com:8080
+$ git config --global https.proxy http://proxy.example.com:8080
 ```
 
 ---
@@ -98,6 +93,11 @@ $ git config https.proxy http://proxy.example.com:8080
 以下のコマンドを実行して、作成したリポジトリをcloneする。
 ```
 $ git clone https://github.com/<ユーザ名>/<リポジトリ名>.git
+```
+以下のコマンドを実行して、clone したリポジトリのユーザ設定を行う。
+```
+$ git config user.name <ユーザ名>
+$ git config user.email <メールアドレス>
 ```
 
 ---
