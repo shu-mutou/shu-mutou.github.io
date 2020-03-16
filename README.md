@@ -5,6 +5,9 @@ Love open source communities.
 
 ![](/img/shu-mutow-64.png)
 
+* [GitHub](https://github.com/shu-mutou)
+* [Twitter](https://twitter.com/ShuMuto)
+
 ----
 
 * Display on [slideshow](https://shu-mutou.github.io/slideshow.html?md=README.md&title=Slideshow&theme=https://shu-mutou.github.io/revealjs-custom-jp.css)
