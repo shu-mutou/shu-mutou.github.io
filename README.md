@@ -1,11 +1,11 @@
 Shu Muto
 ========
 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
 Love open source communities.
 
-![](/img/shu-mutow-64.png)
+![](/img/ShuMuto2020-192.png)
 ![](/img/QR_shu-mutou.github.io_icon.png)
 
 * [GitHub](https://github.com/shu-mutou)
