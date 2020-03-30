@@ -1,6 +1,8 @@
 Shu Muto
 ========
 
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
 Love open source communities.
 
 ![](/img/shu-mutow-64.png)
