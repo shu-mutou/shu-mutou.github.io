@@ -6,6 +6,7 @@ Shu Muto
 Love open source communities.
 
 ![](/img/shu-mutow-64.png)
+![](/img/QR_shu-mutou.github.io_icon.png)
 
 * [GitHub](https://github.com/shu-mutou)
 * [Twitter](https://twitter.com/ShuMuto)
