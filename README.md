@@ -1,7 +1,7 @@
 Shu Muto
 ========
 
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 Love open source communities.
 
