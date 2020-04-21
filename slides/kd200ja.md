@@ -3,7 +3,7 @@ Kubernetes Dashboard 2.0.0 リリース!!
 
 ![Shu Muto](/img/ShuMuto2020-64.png)
 
-2020-4-X [Shu Muto](https://shu-mutou.github.io)
+2020-4-22 [Shu Muto](https://shu-mutou.github.io)
 
 Note:
 * [スライドショーで表示](https://shu-mutou.github.io/slideshow.html?md=/slides/kd200ja.md&title=Slideshow&theme=https://shu-mutou.github.io/revealjs-custom-jp.css)
