@@ -1,0 +1,31 @@
+<html>
+<head>
+<script>
+function randomStr(len, seed){
+    var str = "";
+    for(i = 0; i < len; i++){
+        str += seed[Math.floor(Math.random()*seed.length)];
+    }
+    return str;
+}
+
+function generate(){
+    var len = parseInt(document.getElementById("length").getAttribute("value"), 10);
+    var seed = document.getElementById("seed").getAttribute("value");
+    var symbols = document.getElementById("symbols").getAttribute("value");
+    var str = randomStr(len, seed + symbols);
+    document.getElementById("result").innerText = str;
+}
+</script>
+</head>
+<body>
+<h1>Random String Generator</h1>
+
+Seed: <input type="text" id="seed" value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"><br/>
+Symbols: <input type="text" id="symbols" value="@-_+%$#!'/\.,&"><br/>
+Length: <input type="text" id="length" value="8"><br/>
+<button onClick="generate()">generate!</button><br/>
+
+<h1 id="result">result</h1>
+</body>
+</html>

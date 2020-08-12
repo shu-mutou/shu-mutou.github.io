@@ -1,0 +1,55 @@
+<htm>
+<head>
+<script>
+function randomStr(len, seed){
+    var str = "";
+    for(i = 0; i < len; i++){
+        str += seed[Math.floor(Math.random()*seed.length)];
+    }
+    return str;
+}
+
+function generate(){
+    var x = parseInt(document.getElementById("x").getAttribute("value"), 10);
+    var y = parseInt(document.getElementById("y").getAttribute("value"), 10);
+    var seed = document.getElementById("seed").getAttribute("value");
+    var symbols = document.getElementById("symbols").getAttribute("value");
+    var str = randomStr(x*y, seed + symbols);
+
+    var div = document.getElementById("result");
+    div.innerHTML = "";
+    tb = document.createElement("table");
+    for(row = 0; row < x; row++){
+        tr = document.createElement("tr");
+        for(col = 0; col < y; col++){
+            td = document.createElement("td");
+            td.setAttribute("class", "cell");
+            content = document.createTextNode(str.substr(row * y + col, 1));
+            td.appendChild(content);
+            tr.appendChild(td);
+        }
+        tb.appendChild(tr);
+    }
+    div.appendChild(tb);
+}
+</script>
+<style>
+.cell {
+    font-size: 32px;
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>Random Matrix Generator</h1>
+Seed: <input type="text" id="seed" value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"><br/>
+Symbols: <input type="text" id="symbols" value="@-_+%$#!'/\.,&"><br/>
+Columns: <input type="text" id="x" value="8"><br/>
+Rows: <input type="text" id="y" value="8"><br/>
+<button onClick="generate()">generate!</button><br/>
+<div id="result"></div>
+</body>
+</html>
