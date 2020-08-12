@@ -10,10 +10,10 @@ function randomStr(len, seed){
 }
 
 function generate(){
-    var x = parseInt(document.getElementById("x").getAttribute("value"), 10);
-    var y = parseInt(document.getElementById("y").getAttribute("value"), 10);
-    var seed = document.getElementById("seed").getAttribute("value");
-    var symbols = document.getElementById("symbols").getAttribute("value");
+    var x = parseInt(document.getElementById("x").value, 10);
+    var y = parseInt(document.getElementById("y").value, 10);
+    var seed = document.getElementById("seed").value;
+    var symbols = document.getElementById("symbols").value;
     var str = randomStr(x*y, seed + symbols);
 
     var div = document.getElementById("result");
