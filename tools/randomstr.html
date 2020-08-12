@@ -10,9 +10,9 @@ function randomStr(len, seed){
 }
 
 function generate(){
-    var len = parseInt(document.getElementById("length").getAttribute("value"), 10);
-    var seed = document.getElementById("seed").getAttribute("value");
-    var symbols = document.getElementById("symbols").getAttribute("value");
+    var len = parseInt(document.getElementById("length").value, 10);
+    var seed = document.getElementById("seed").value;
+    var symbols = document.getElementById("symbols").value;
     var str = randomStr(len, seed + symbols);
     document.getElementById("result").innerText = str;
 }
