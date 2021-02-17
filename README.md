@@ -8,6 +8,9 @@ Love open source communities.
 <div style="display:inline">
 <img src="/img/ShuMuto2020-192.png" height=200>
 <img src="/img/QR_shu-mutou.github.io_icon.png" height=200>
+</div>
+
+<div style="display:inline">
 <img src="/img/CKA.png" height=200>
 <img src="/img/CKAD.png" height=200>
 </div>
