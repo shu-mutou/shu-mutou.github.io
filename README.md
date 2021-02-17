@@ -5,11 +5,12 @@ Shu Muto
 
 Love open source communities.
 
-![](/img/ShuMuto2020-192.png)
-![](/img/QR_shu-mutou.github.io_icon.png)
-<br>
-<img src="/img/CKA.png" width=250>
-<img src="/img/CKAD.png" width=250>
+<div style="display:inline">
+<img src="/img/ShuMuto2020-192.png" height=200>
+<img src="/img/QR_shu-mutou.github.io_icon.png" height=200>
+<img src="/img/CKA.png" height=200>
+<img src="/img/CKAD.png" height=200>
+</div>
 
 * [GitHub](https://github.com/shu-mutou)
 * [Twitter](https://twitter.com/ShuMuto)
