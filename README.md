@@ -7,9 +7,13 @@ Love open source communities.
 
 ![](/img/ShuMuto2020-192.png)
 ![](/img/QR_shu-mutou.github.io_icon.png)
-
 * [GitHub](https://github.com/shu-mutou)
 * [Twitter](https://twitter.com/ShuMuto)
+
+----
+
+![](/img/CKA.png)
+![](/img/CKAD.png)
 
 ----
 
