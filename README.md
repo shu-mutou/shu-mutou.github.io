@@ -35,3 +35,4 @@ Contents
 * [Kubernetes Dashboard 2.0.0 released!! (日本語)](https://shu-mutou.github.io/slideshow.html?md=/slides/kd200ja.md&title=Kubernetes-Dashboard-2.0.0-released&theme=https://shu-mutou.github.io/revealjs-custom-jp.css)
 * [Random String Generator](https://shu-mutou.github.io/tools/randomstr.html)
 * [Random Matrix Generator](https://shu-mutou.github.io/tools/randommatrix.html)
+* [GGI Handbook v1.2 Japanese](/OSPO/ggi_handbook_ja.pdf)
