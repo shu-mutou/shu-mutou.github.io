@@ -10,12 +10,11 @@ Love open source communities.
 <img src="/img/QR_shu-mutou.github.io_icon.png" height=200>
 </div>
 
-<div style="display:inline">
-<img src="/img/CKA.png" height=200>
-<img src="/img/CKAD.png" height=200>
-</div>
-
 * [GitHub](https://github.com/shu-mutou)
+  
+<div style="display:inline">
+<img src="/img/github@shu-mutou.qr.png" height=200>
+</div>
 * [Twitter](https://twitter.com/ShuMuto)
 
 ----
