@@ -11,8 +11,7 @@ Love open source communities.
 </div>
 
 * [GitHub](https://github.com/shu-mutou)
-  
-<div style="display:inline">
+  <div style="display:inline">
 <img src="/img/github@shu-mutou.qr.png" height=200>
 </div>
 * [Twitter](https://twitter.com/ShuMuto)
